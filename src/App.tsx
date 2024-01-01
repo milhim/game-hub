@@ -13,7 +13,7 @@ function App() {
             }}
             templateColumns={{
                 base: "1fr",
-                large: "200px 1fr",
+                lg: "200px 1fr",
             }}
         >
             <GridItem area="nav">
