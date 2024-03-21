@@ -15,7 +15,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
       </MenuButton>
 
       <MenuList>
-        {errors && (
+        {errors.length > 0 && (
           <MenuItem disabled textColor="red">
             Something went wrong
           </MenuItem>
