@@ -5,24 +5,26 @@ import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
-    game: Game;
+  game: Game;
 }
 
 const GameCard = ({ game }: Props) => {
-    return (
-        <Card>
-            <Image src={getCroppedImageUrl(game.background_image)}></Image>
-            <CardBody>
-                <Heading fontSize={"2xl"}>{game.name}</Heading>
-                <HStack justifyContent="space-between">
-                    <PlatformIconList
-                        platforms={game.platforms.map((p) => p.platform)}
-                    ></PlatformIconList>
-                    <CriticScore score={game.metacritic}></CriticScore>
-                </HStack>
-            </CardBody>
-        </Card>
-    );
+  return (
+    <Card>
+      <Image src={getCroppedImageUrl(game.background_image)}></Image>
+      <CardBody>
+        <HStack justifyContent="space-between">
+          <PlatformIconList
+            platforms={game.platforms.map((p) => p.platform)}
+          ></PlatformIconList>
+          <CriticScore score={game.metacritic}></CriticScore>
+        </HStack>
+        <Heading marginTop={4} fontSize={"2xl"}>
+          {game.name}
+        </Heading>
+      </CardBody>
+    </Card>
+  );
 };
 
 export default GameCard;
